@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebURL - Collection</title>
+    <link rel="stylesheet" type="text/css" href="/swift-url/all.css" media="all" />
+</head>
+<body>
+    <header>
+        <a href="/swift-url/">
+            <strong>
+                WebURL
+            </strong>
+            <span>Documentation</span>
+        </a>
+        <sup>Beta</sup>
+    </header>
+
+    <!--
+    <form class="search">
+        <input type="search" placeholder="Search" />
+    </form>
+    -->
+
+    <nav>
+        <div class="wrapper">
+            <h2>On This Page</h2>
+            <ol><li><a href="#properties">Properties</a><ul><li class="variable"><a href="#collection.urlcomponentencodedstring">url​Component​Encoded​String</a></li><li class="variable"><a href="#collection.urlformencodedstring">url​Form​Encoded​String</a></li><li class="variable"><a href="#collection.percentdecodedstring">percent​Decoded​String</a></li><li class="variable"><a href="#collection.urlformdecodedstring">url​Form​Decoded​String</a></li></ul></li><li><a href="#methods">Methods</a><ul><li class="function"><a href="#collection.percentencodedstring(as:)">percent​Encoded​String(as:​)</a></li><li class="function"><a href="#collection.percentdecodedstring(from:)">percent​Decoded​String(from:​)</a></li></ul></li></ol>
+        </div>
+    </nav>
+
+    <main>
+        <article>
+            <h1>
+    <small>Extensions on</small>
+    <code class="name">Collection</code>
+</h1>
+    <section id="properties">
+        <h2>Properties</h2>
+
+        <div role="article" class="variable" id="collection.urlcomponentencodedstring">
+    <h3>
+        <code>url​Component​Encoded​String</code>
+    </h3>
+    <div class="declaration">
+<pre class="highlight"><code><span class="attribute">@</span><span class="attribute">inlinable</span>
+<span class="keyword">public</span> <span class="keyword">var</span> <span class="variable">urlComponentEncodedString</span>: <span class="type">String</span> </code></pre>
+</div>
+<div class="summary" role="doc-abstract">
+    <p>Interpets this collection's elements as UTF-8 code-units, and returns a <code>String</code> formed by encoding them using the <code>\.component</code> encoding-set.</p>
+
+</div>
+<div class="discussion">
+    <aside class="See Also">
+    <p><code>StringProtocol.urlComponentEncoded</code></p>
+
+</aside>
+</div>
+</div>
+<div role="article" class="variable" id="collection.urlformencodedstring">
+    <h3>
+        <code>url​Form​Encoded​String</code>
+    </h3>
+    <div class="declaration">
+<pre class="highlight"><code><span class="attribute">@</span><span class="attribute">inlinable</span>
+<span class="keyword">public</span> <span class="keyword">var</span> <span class="variable">urlFormEncodedString</span>: <span class="type">String</span> </code></pre>
+</div>
+<div class="summary" role="doc-abstract">
+    <p>Interpets this collection's elements as UTF-8 code-units, and returns a <code>String</code> formed by encoding them using the
+<code>application/x-www-form-urlencoded</code> (<code>\.form</code>) encoding-set.</p>
+
+</div>
+<div class="discussion">
+    <aside class="See Also">
+    <p><code>StringProtocol.urlFormEncoded</code></p>
+
+</aside>
+</div>
+</div>
+<div role="article" class="variable" id="collection.percentdecodedstring">
+    <h3>
+        <code>percent​Decoded​String</code>
+    </h3>
+    <div class="declaration">
+<pre class="highlight"><code><span class="attribute">@</span><span class="attribute">inlinable</span>
+<span class="keyword">public</span> <span class="keyword">var</span> <span class="variable">percentDecodedString</span>: <span class="type">String</span> </code></pre>
+</div>
+<div class="summary" role="doc-abstract">
+    <p>Interprets this collection's elements as UTF-8 code-units, and returns a string formed by decoding all percent-encoded code-unit sequences.</p>
+
+</div>
+<div class="discussion">
+    <p>This is equivalent to calling <code>percentDecodedString(from: \.percentEncodedOnly)</code>. If this collection's contents were encoded
+with substitutions (e.g. form-encoding), use <code>percentDecodedString(from:)</code> instead, providing a <code>PercentDecodeSet</code> which is able to
+reverse those substitutions.</p>
+
+<aside class="See Also">
+    <p><code>StringProtocol.percentDecoded</code></p>
+
+</aside>
+<aside class="Important">
+    <p>Users should beware that percent-encoding has frequently been used by attackers to smuggle malicious inputs (e.g. extra path components which lead to sensitive data when used as a relative path, ASCII NULL bytes, or SQL injection), sometimes under multiple layers of encoding. Users to be careful not to over-decode their strings, and every time a string is percent-decoded, the result must be considered to be <strong>entirely unvalidated</strong>, even if the source contents were previously validated.</p>
+
+</aside>
+</div>
+</div>
+<div role="article" class="variable" id="collection.urlformdecodedstring">
+    <h3>
+        <code>url​Form​Decoded​String</code>
+    </h3>
+    <div class="declaration">
+<pre class="highlight"><code><span class="attribute">@</span><span class="attribute">inlinable</span>
+<span class="keyword">public</span> <span class="keyword">var</span> <span class="variable">urlFormDecodedString</span>: <span class="type">String</span> </code></pre>
+</div>
+<div class="summary" role="doc-abstract">
+    <p>Interprets this collection's elements as UTF-8 code-units, and returns a string formed by decoding all percent-encoded code-unit sequences and
+reversing substitutions made by the <code>application/x-www-form-urlencoded</code> encode-set.</p>
+
+</div>
+<div class="discussion">
+    <p>This is equivalent to callling <code>percentDecodedString(from: \.form)</code>.</p>
+
+<aside class="See Also">
+    <p><code>StringProtocol.urlFormDecoded</code></p>
+
+</aside>
+<aside class="Important">
+    <p>Users should beware that percent-encoding has frequently been used by attackers to smuggle malicious inputs (e.g. extra path components which lead to sensitive data when used as a relative path, ASCII NULL bytes, or SQL injection), sometimes under multiple layers of encoding. Users to be careful not to over-decode their strings, and every time a string is percent-decoded, the result must be considered to be <strong>entirely unvalidated</strong>, even if the source contents were previously validated.</p>
+
+</aside>
+</div>
+</div>
+    </section>
+    <section id="methods">
+        <h2>Methods</h2>
+
+        <div role="article" class="function" id="collection.percentencodedstring(as:)">
+    <h3>
+        <code>percent​Encoded​String(as:​)</code>
+    </h3>
+    <div class="declaration">
+<pre class="highlight"><code><span class="attribute">@</span><span class="attribute">inlinable</span> <span class="attribute">@</span><span class="attribute">inline</span>(<span class="variable">__always</span>)
+<span class="keyword">public</span> <span class="keyword">func</span> <span class="function">percentEncodedString</span>&lt;<span class="variable">EncodeSet</span>: <span class="type">PercentEncodeSetProtocol</span>&gt;(
+  <span class="variable">as</span> <span class="variable">encodeSet</span>: <span class="type">KeyPath</span>&lt;<span class="type">PercentEncodeSet</span>, <span class="type">EncodeSet</span>.<span class="type">Type</span>&gt;
+) -&gt; <span class="type">String</span> </code></pre>
+</div>
+<div class="summary" role="doc-abstract">
+    <p>Interpets this collection's elements as UTF-8 code-units, and returns a <code>String</code> formed by encoding them using the given <code>EncodeSet</code>.</p>
+
+</div>
+<div class="discussion">
+    <aside class="See Also">
+    <p><code>StringProtocol.percentEncoded(as:)</code></p>
+
+</aside>
+</div>
+</div>
+<div role="article" class="function" id="collection.percentdecodedstring(from:)">
+    <h3>
+        <code>percent​Decoded​String(from:​)</code>
+    </h3>
+    <div class="declaration">
+<pre class="highlight"><code><span class="attribute">@</span><span class="attribute">inlinable</span> <span class="attribute">@</span><span class="attribute">inline</span>(<span class="variable">__always</span>)
+<span class="keyword">public</span> <span class="keyword">func</span> <span class="function">percentDecodedString</span>&lt;<span class="variable">EncodeSet</span>&gt;(
+  <span class="variable">from</span> <span class="variable">decodeSet</span>: <span class="type">KeyPath</span>&lt;<span class="type">PercentDecodeSet</span>, <span class="type">EncodeSet</span>.<span class="type">Type</span>&gt;
+) -&gt; <span class="type">String</span> <span class="keyword">where</span> <span class="type">EncodeSet</span>: <span class="type">PercentEncodeSetProtocol</span> </code></pre>
+</div>
+<div class="summary" role="doc-abstract">
+    <p>Interprets this collection's elements as UTF-8 code-units, and returns a string formed by decoding all percent-encoded code-unit sequences and
+using <code>EncodeSet</code> to restore substituted code-units.</p>
+
+</div>
+<div class="discussion">
+    <p>If no code-points were substituted when this collection's contents were encoded, <code>\.percentEncodedOnly</code> may be used to only remove percent-encoding.</p>
+
+<aside class="See Also">
+    <p><code>StringProtocol.percentDecoded(from:)</code></p>
+
+</aside>
+<aside class="Important">
+    <p>Users should beware that percent-encoding has frequently been used by attackers to smuggle malicious inputs (e.g. extra path components which lead to sensitive data when used as a relative path, ASCII NULL bytes, or SQL injection), sometimes under multiple layers of encoding. Users to be careful not to over-decode their strings, and every time a string is percent-decoded, the result must be considered to be <strong>entirely unvalidated</strong>, even if the source contents were previously validated.</p>
+
+</aside>
+</div>
+</div>
+    </section>
+        </article>
+    </main>
+
+    <footer>
+        <p>
+    Generated on <time datetime="2021-05-03T17:07:33+0000">May 3, 2021</time> using a fork of <a href="https://github.com/SwiftDocOrg/swift-doc">swift-doc</a> <span class="version">1.0.0-beta.6</span>.
+</p>
+    </footer>
+</body>
+</html>

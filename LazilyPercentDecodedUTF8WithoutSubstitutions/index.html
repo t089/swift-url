@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebURL - LazilyPercentDecodedUTF8WithoutSubstitutions</title>
+    <link rel="stylesheet" type="text/css" href="/swift-url/all.css" media="all" />
+</head>
+<body>
+    <header>
+        <a href="/swift-url/">
+            <strong>
+                WebURL
+            </strong>
+            <span>Documentation</span>
+        </a>
+        <sup>Beta</sup>
+    </header>
+
+    <!--
+    <form class="search">
+        <input type="search" placeholder="Search" />
+    </form>
+    -->
+
+    <nav>
+        <div class="wrapper">
+            <h2>On This Page</h2>
+            <ol/>
+        </div>
+    </nav>
+
+    <main>
+        <article>
+            <h1>
+    <small>Typealias</small>
+    <span class="name">Lazily​Percent​Decoded​UTF8Without​Substitutions</span>
+</h1>
+
+<div class="declaration">
+<pre class="highlight"><code><span class="keyword">public</span> <span class="keyword">typealias</span> <span class="variable">LazilyPercentDecodedUTF8WithoutSubstitutions</span>&lt;<span class="variable">Source</span>&gt; =
+<span class="type">LazilyPercentDecodedUTF8</span>&lt;<span class="type">Source</span>, <span class="type">PercentEncodeSet</span>.<span class="type">_Passthrough</span>&gt; <span class="keyword">where</span> <span class="type">Source</span>: <span class="type">Collection</span>, <span class="type">Source</span>.<span class="type">Element</span> == <span class="type">UInt8</span></code></pre>
+</div>
+<div class="summary" role="doc-abstract">
+    <p>A <code>Collection</code> which lazily replaces all percent-encoded UTF8 code-units from its <code>Source</code> with their decoded code-units.
+It does not reverse any substitutions that may be a part of how <code>Source</code> is encoded.</p>
+
+</div>
+<div class="discussion">
+    <p>Percent decoding transforms certain sequences of ASCII code-points to arbitrary byte values (&quot;%AB&quot; to the byte 0xAB).</p>
+
+<aside class="Important">
+    <p>Users should beware that percent-encoding has frequently been used by attackers to smuggle malicious inputs (e.g. extra path components which lead to sensitive data when used as a relative path, ASCII NULL bytes, or SQL injection), sometimes under multiple layers of encoding. Users to be careful not to over-decode their strings, and every time a string is percent-decoded, the result must be considered to be <strong>entirely unvalidated</strong>, even if the source contents were previously validated.</p>
+
+</aside>
+</div>
+        </article>
+    </main>
+
+    <footer>
+        <p>
+    Generated on <time datetime="2021-05-03T17:07:34+0000">May 3, 2021</time> using a fork of <a href="https://github.com/SwiftDocOrg/swift-doc">swift-doc</a> <span class="version">1.0.0-beta.6</span>.
+</p>
+    </footer>
+</body>
+</html>

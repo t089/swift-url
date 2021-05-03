@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebURL - PercentDecodeSet</title>
+    <link rel="stylesheet" type="text/css" href="/swift-url/all.css" media="all" />
+</head>
+<body>
+    <header>
+        <a href="/swift-url/">
+            <strong>
+                WebURL
+            </strong>
+            <span>Documentation</span>
+        </a>
+        <sup>Beta</sup>
+    </header>
+
+    <!--
+    <form class="search">
+        <input type="search" placeholder="Search" />
+    </form>
+    -->
+
+    <nav>
+        <div class="wrapper">
+            <h2>On This Page</h2>
+            <ol><li><a href="#properties">Properties</a><ul><li class="variable"><a href="#percentdecodeset.percentencodedonly">percent​Encoded​Only</a></li><li class="variable"><a href="#percentdecodeset.form">form</a></li></ul></li></ol>
+        </div>
+    </nav>
+
+    <main>
+        <article>
+            <h1>
+    <small>Enumeration</small>
+    <code class="name">Percent​Decode​Set</code>
+</h1>
+
+<div class="declaration">
+<pre class="highlight"><code><span class="keyword">public</span> <span class="keyword">enum</span> <span class="type">PercentDecodeSet</span> </code></pre>
+</div>
+<div class="summary" role="doc-abstract">
+    <p>A namespace for percent-decode sets.</p>
+
+</div>
+<div class="discussion">
+    <p>Decoding is thankfully much simpler than encoding; in almost all cases, simply removing percent-encoding is sufficient, as regular URL encode-sets do
+not substitute characters. Form-encoding is the only exception specified in the URL Standard.</p>
+
+<p>Since percent-decode sets are not stateful, you only ever need to refer to their type, never an instance. The types are exposed as properties so you
+can use a convenient KeyPath syntax to refer to them.</p>
+
+</div>
+
+    <section id="properties">
+        <h2>Properties</h2>
+
+        <div role="article" class="variable" id="percentdecodeset.percentencodedonly">
+    <h3>
+        <code>percent​Encoded​Only</code>
+    </h3>
+    <div class="declaration">
+<pre class="highlight"><code><span class="keyword">public</span> <span class="keyword">var</span> <span class="variable">percentEncodedOnly</span>: <span class="type">PercentEncodeSet</span>.<span class="type">_Passthrough</span>.<span class="type">Type</span> </code></pre>
+</div>
+<div class="summary" role="doc-abstract">
+    <p>A decoding set which only decodes percent-encoded characters and assumes that no substituted characters need to be restored.</p>
+
+</div>
+</div>
+<div role="article" class="variable" id="percentdecodeset.form">
+    <h3>
+        <code>form</code>
+    </h3>
+    <div class="declaration">
+<pre class="highlight"><code><span class="keyword">public</span> <span class="keyword">var</span> <span class="variable">form</span>: <span class="type">PercentEncodeSet</span>.<span class="type">FormEncoded</span>.<span class="type">Type</span> </code></pre>
+</div>
+<div class="summary" role="doc-abstract">
+    <p>The <a href="https://url.spec.whatwg.org/#application-x-www-form-urlencoded-percent-encode-set">application/x-www-form-urlencoded</a>
+percent-encode set.</p>
+
+</div>
+</div>
+    </section>
+
+
+
+        </article>
+    </main>
+
+    <footer>
+        <p>
+    Generated on <time datetime="2021-05-03T17:07:34+0000">May 3, 2021</time> using a fork of <a href="https://github.com/SwiftDocOrg/swift-doc">swift-doc</a> <span class="version">1.0.0-beta.6</span>.
+</p>
+    </footer>
+</body>
+</html>

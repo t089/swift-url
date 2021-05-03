@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebURL - LazilyPercentEncodedUTF8</title>
+    <link rel="stylesheet" type="text/css" href="/swift-url/all.css" media="all" />
+</head>
+<body>
+    <header>
+        <a href="/swift-url/">
+            <strong>
+                WebURL
+            </strong>
+            <span>Documentation</span>
+        </a>
+        <sup>Beta</sup>
+    </header>
+
+    <!--
+    <form class="search">
+        <input type="search" placeholder="Search" />
+    </form>
+    -->
+
+    <nav>
+        <div class="wrapper">
+            <h2>On This Page</h2>
+            <ol/>
+        </div>
+    </nav>
+
+    <main>
+        <article>
+            <h1>
+    <small>Typealias</small>
+    <span class="name">Lazily​Percent​Encoded​UTF8</span>
+</h1>
+
+<div class="declaration">
+<pre class="highlight"><code><span class="keyword">public</span> <span class="keyword">typealias</span> <span class="variable">LazilyPercentEncodedUTF8</span>&lt;<span class="variable">Source</span>, <span class="variable">EncodeSet</span>&gt; =
+<span class="type">FlattenSequence</span>&lt;<span class="type">LazilyPercentEncodedGroups</span>&lt;<span class="type">Source</span>, <span class="type">EncodeSet</span>&gt;&gt;
+<span class="keyword">where</span> <span class="type">Source</span>: <span class="type">Collection</span>, <span class="type">Source</span>.<span class="type">Element</span> == <span class="type">UInt8</span>, <span class="type">EncodeSet</span>: <span class="type">PercentEncodeSetProtocol</span></code></pre>
+</div>
+<div class="summary" role="doc-abstract">
+    <p>A <code>Collection</code> which lazily percent-encodes its <code>Source</code> UTF8 code-units using a given <code>EncodeSet</code>.
+This collection only <em>adds</em> percent-encoding or substitutions; it does not decode any pre-existing percent-encoded or substituted code-points in <code>Source</code>.</p>
+
+</div>
+<div class="discussion">
+    <p>Percent encoding transforms arbitrary Unicode strings to a limited set of ASCII code-points which are permitted by the <code>EncodeSet</code>.
+If the <code>EncodeSet</code> performs substitutions, users should take care to decode the contents using the same <code>EncodeSet</code>.</p>
+
+</div>
+        </article>
+    </main>
+
+    <footer>
+        <p>
+    Generated on <time datetime="2021-05-03T17:07:34+0000">May 3, 2021</time> using a fork of <a href="https://github.com/SwiftDocOrg/swift-doc">swift-doc</a> <span class="version">1.0.0-beta.6</span>.
+</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebURL - LazilyPercentDecodedUTF8</title>
+    <link rel="stylesheet" type="text/css" href="/swift-url/all.css" media="all" />
+</head>
+<body>
+    <header>
+        <a href="/swift-url/">
+            <strong>
+                WebURL
+            </strong>
+            <span>Documentation</span>
+        </a>
+        <sup>Beta</sup>
+    </header>
+
+    <!--
+    <form class="search">
+        <input type="search" placeholder="Search" />
+    </form>
+    -->
+
+    <nav>
+        <div class="wrapper">
+            <h2>On This Page</h2>
+            <ol><li><a href="#relationships">Relationships</a><ul><li><a href="#relationships">Conforms To</a></li></ul></li><li><a href="#nested type aliases">Nested Type Aliases</a><ul><li class="typealias"><a href="#lazilypercentdecodedutf8.element">Element</a></li></ul></li><li><a href="#properties">Properties</a><ul><li class="variable"><a href="#lazilypercentdecodedutf8.startindex">start​Index</a></li><li class="variable"><a href="#lazilypercentdecodedutf8.endindex">end​Index</a></li></ul></li><li><a href="#methods">Methods</a><ul><li class="function"><a href="#lazilypercentdecodedutf8.index(after:)">index(after:​)</a></li><li class="function"><a href="#lazilypercentdecodedutf8.formindex(after:)">form​Index(after:​)</a></li></ul></li></ol>
+        </div>
+    </nav>
+
+    <main>
+        <article>
+            <h1>
+    <small>Structure</small>
+    <code class="name">Lazily​Percent​Decoded​UTF8</code>
+</h1>
+
+<div class="declaration">
+<pre class="highlight"><code><span class="keyword">public</span> <span class="keyword">struct</span> <span class="type">LazilyPercentDecodedUTF8</span>&lt;<span class="variable">Source</span>, <span class="variable">EncodeSet</span>&gt;: <span class="type">Collection</span>, <span class="type">LazyCollectionProtocol</span>
+<span class="keyword">where</span> <span class="type">Source</span>: <span class="type">Collection</span>, <span class="type">Source</span>.<span class="type">Element</span> == <span class="type">UInt8</span>, <span class="type">EncodeSet</span>: <span class="type">PercentEncodeSetProtocol</span> </code></pre>
+</div>
+<div class="summary" role="doc-abstract">
+    <p>A <code>Collection</code> which lazily replaces all percent-encoded UTF8 code-units from its <code>Source</code> with their decoded code-units,
+and reverses substitutions of other code-units performed by <code>EncodeSet</code>.</p>
+
+</div>
+<div class="discussion">
+    <p>If the encode-set does not perform substitutions, <code>PercentEncodeSet._Passthrough</code> can be used to only remove percent-encoding.</p>
+
+<aside class="Important">
+    <p>Users should beware that percent-encoding has frequently been used by attackers to smuggle malicious inputs (e.g. extra path components which lead to sensitive data when used as a relative path, ASCII NULL bytes, or SQL injection), sometimes under multiple layers of encoding. Users to be careful not to over-decode their strings, and every time a string is percent-decoded, the result must be considered to be <strong>entirely unvalidated</strong>, even if the source contents were previously validated.</p>
+
+</aside>
+</div>
+<section id="relationships">
+    <h2 hidden>Relationships</h2>
+        
+        <h3>Conforms To</h3>
+<dl>
+    <dt class="unknown"><code>Collection</code></dt>
+<dt class="unknown"><code>LazyCollectionProtocol</code></dt>
+</dl>
+</section>
+    <section id="nested type aliases">
+        <h2>Nested Type Aliases</h2>
+
+        <div role="article" class="typealias" id="lazilypercentdecodedutf8.element">
+    <h3>
+        <code>Element</code>
+    </h3>
+    <div class="declaration">
+<pre class="highlight"><code><span class="keyword">public</span> <span class="keyword">typealias</span> <span class="variable">Element</span> = <span class="type">UInt8</span></code></pre>
+</div>
+</div>
+    </section>
+    <section id="properties">
+        <h2>Properties</h2>
+
+        <div role="article" class="variable" id="lazilypercentdecodedutf8.startindex">
+    <h3>
+        <code>start​Index</code>
+    </h3>
+    <div class="declaration">
+<pre class="highlight"><code><span class="keyword">public</span> <span class="keyword">let</span> <span class="variable">startIndex</span>: <span class="type">Index</span></code></pre>
+</div>
+</div>
+<div role="article" class="variable" id="lazilypercentdecodedutf8.endindex">
+    <h3>
+        <code>end​Index</code>
+    </h3>
+    <div class="declaration">
+<pre class="highlight"><code><span class="attribute">@</span><span class="attribute">inlinable</span>
+<span class="keyword">public</span> <span class="keyword">var</span> <span class="variable">endIndex</span>: <span class="type">Index</span> </code></pre>
+</div>
+</div>
+    </section>
+    <section id="methods">
+        <h2>Methods</h2>
+
+        <div role="article" class="function" id="lazilypercentdecodedutf8.index(after:)">
+    <h3>
+        <code>index(after:​)</code>
+    </h3>
+    <div class="declaration">
+<pre class="highlight"><code><span class="attribute">@</span><span class="attribute">inlinable</span>
+<span class="keyword">public</span> <span class="keyword">func</span> <span class="function">index</span>(<span class="variable">after</span> <span class="variable">i</span>: <span class="type">Index</span>) -&gt; <span class="type">Index</span> </code></pre>
+</div>
+</div>
+<div role="article" class="function" id="lazilypercentdecodedutf8.formindex(after:)">
+    <h3>
+        <code>form​Index(after:​)</code>
+    </h3>
+    <div class="declaration">
+<pre class="highlight"><code><span class="attribute">@</span><span class="attribute">inlinable</span>
+<span class="keyword">public</span> <span class="keyword">func</span> <span class="function">formIndex</span>(<span class="variable">after</span> <span class="variable">i</span>: <span class="keyword">inout</span> <span class="type">Index</span>) </code></pre>
+</div>
+</div>
+    </section>
+
+
+
+        </article>
+    </main>
+
+    <footer>
+        <p>
+    Generated on <time datetime="2021-05-03T17:07:34+0000">May 3, 2021</time> using a fork of <a href="https://github.com/SwiftDocOrg/swift-doc">swift-doc</a> <span class="version">1.0.0-beta.6</span>.
+</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebURL - IPv4Address.ParserResult</title>
+    <link rel="stylesheet" type="text/css" href="/swift-url/all.css" media="all" />
+</head>
+<body>
+    <header>
+        <a href="/swift-url/">
+            <strong>
+                WebURL
+            </strong>
+            <span>Documentation</span>
+        </a>
+        <sup>Beta</sup>
+    </header>
+
+    <!--
+    <form class="search">
+        <input type="search" placeholder="Search" />
+    </form>
+    -->
+
+    <nav>
+        <div class="wrapper">
+            <h2>On This Page</h2>
+            <ol><li><a href="#relationships">Relationships</a><ul><li><a href="#relationships">Member Of</a></li></ul></li><li><a href="#enumeration cases">Enumeration Cases</a><ul><li class="case"><a href="#ipv4address.parserresult.success">success</a></li><li class="case"><a href="#ipv4address.parserresult.failure">failure</a></li><li class="case"><a href="#ipv4address.parserresult.notanipaddress">not​AnIPAddress</a></li></ul></li></ol>
+        </div>
+    </nav>
+
+    <main>
+        <article>
+            <h1>
+    <small>Enumeration</small>
+    <code class="name">IPv4Address.​Parser​Result</code>
+</h1>
+
+<div class="declaration">
+<pre class="highlight"><code><span class="keyword">public</span> <span class="keyword">enum</span> <span class="type">ParserResult</span> </code></pre>
+</div>
+<div class="summary" role="doc-abstract">
+    <p>A tri-state result which captures whether an IPv4 address failed to parse because it was invalid,
+or whether it failed because the given string does not look like an IP address.</p>
+
+</div>
+<section id="relationships">
+    <h2 hidden>Relationships</h2>
+        
+        <h3>Member Of</h3>
+<dl>
+    <dt class="structure"><code><a href="/swift-url/IPv4Address">IPv4Address</a></code></dt>
+<dd><p>A 32-bit numerical identifier assigned to a device on an
+<a href="https://tools.ietf.org/html/rfc791">Internet Protocol, version 4</a> network.</p>
+</dd>
+</dl>
+</section>
+    <section id="enumeration cases">
+        <h2>Enumeration Cases</h2>
+
+        <div role="article" class="case" id="ipv4address.parserresult.success">
+    <h3>
+        <code>success</code>
+    </h3>
+    <div class="declaration">
+<pre class="highlight"><code><span class="keyword">case</span> <span class="variable">success</span>(<span class="type">IPv4Address</span>)</code></pre>
+</div>
+<div class="summary" role="doc-abstract">
+    <p>The string was successfully parsed as an IPv4 address.</p>
+
+</div>
+</div>
+<div role="article" class="case" id="ipv4address.parserresult.failure">
+    <h3>
+        <code>failure</code>
+    </h3>
+    <div class="declaration">
+<pre class="highlight"><code><span class="keyword">case</span> <span class="variable">failure</span></code></pre>
+</div>
+<div class="summary" role="doc-abstract">
+    <p>The string was recognized as probably being an IPv4 address, but was invalid and could not be parsed (e.g. because the value would overflow).</p>
+
+</div>
+</div>
+<div role="article" class="case" id="ipv4address.parserresult.notanipaddress">
+    <h3>
+        <code>not​AnIPAddress</code>
+    </h3>
+    <div class="declaration">
+<pre class="highlight"><code><span class="keyword">case</span> <span class="variable">notAnIPAddress</span></code></pre>
+</div>
+<div class="summary" role="doc-abstract">
+    <p>The string cannot be recognized as an IPv4 address. This is not the same as being an invalid IP address - for example, the string &quot;9999999999.com&quot; fails
+to parse because the non-numeric characters &quot;com&quot; mean it isn't even an IP address string, whereas the string &quot;9999999999&quot; <em>is</em> a properly-formatted
+IP address string, but fails to parse because the value would overflow.</p>
+
+</div>
+<div class="discussion">
+    <p>When parsing &quot;9999999999.com&quot; as a hostname, it should be treated as a domain or opaque hostname rather than an invalid IP address.
+The string &quot;9999999999&quot; should be treated as a invalid IP address.</p>
+
+</div>
+</div>
+    </section>
+
+
+
+        </article>
+    </main>
+
+    <footer>
+        <p>
+    Generated on <time datetime="2021-05-03T17:07:34+0000">May 3, 2021</time> using a fork of <a href="https://github.com/SwiftDocOrg/swift-doc">swift-doc</a> <span class="version">1.0.0-beta.6</span>.
+</p>
+    </footer>
+</body>
+</html>

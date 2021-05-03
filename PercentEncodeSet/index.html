@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebURL - PercentEncodeSet</title>
+    <link rel="stylesheet" type="text/css" href="/swift-url/all.css" media="all" />
+</head>
+<body>
+    <header>
+        <a href="/swift-url/">
+            <strong>
+                WebURL
+            </strong>
+            <span>Documentation</span>
+        </a>
+        <sup>Beta</sup>
+    </header>
+
+    <!--
+    <form class="search">
+        <input type="search" placeholder="Search" />
+    </form>
+    -->
+
+    <nav>
+        <div class="wrapper">
+            <h2>On This Page</h2>
+            <ol><li><a href="#properties">Properties</a><ul><li class="variable"><a href="#percentencodeset.c0control">c0Control</a></li><li class="variable"><a href="#percentencodeset.fragment">fragment</a></li><li class="variable"><a href="#percentencodeset.query_notspecial">query_not​Special</a></li><li class="variable"><a href="#percentencodeset.query_special">query_special</a></li><li class="variable"><a href="#percentencodeset.path">path</a></li><li class="variable"><a href="#percentencodeset.userinfo">user​Info</a></li><li class="variable"><a href="#percentencodeset.component">component</a></li><li class="variable"><a href="#percentencodeset.form">form</a></li></ul></li></ol>
+        </div>
+    </nav>
+
+    <main>
+        <article>
+            <h1>
+    <small>Enumeration</small>
+    <code class="name">Percent​Encode​Set</code>
+</h1>
+
+<div class="declaration">
+<pre class="highlight"><code><span class="keyword">public</span> <span class="keyword">enum</span> <span class="type">PercentEncodeSet</span> </code></pre>
+</div>
+<div class="summary" role="doc-abstract">
+    <p>A namespace for percent-encode sets.</p>
+
+</div>
+<div class="discussion">
+    <p>Since percent-encode sets are not stateful, you only ever need to refer to their type, never an instance. The types are exposed as properties so you
+can use a convenient KeyPath syntax to refer to them.</p>
+
+</div>
+
+    <section id="properties">
+        <h2>Properties</h2>
+
+        <div role="article" class="variable" id="percentencodeset.c0control">
+    <h3>
+        <code>c0Control</code>
+    </h3>
+    <div class="declaration">
+<pre class="highlight"><code><span class="keyword">public</span> <span class="keyword">var</span> <span class="variable">c0Control</span>: <span class="type">C0Control</span>.<span class="type">Type</span> </code></pre>
+</div>
+<div class="summary" role="doc-abstract">
+    <p>The <a href="https://url.spec.whatwg.org/#c0-control-percent-encode-set">C0 control</a> percent-encode set.</p>
+
+</div>
+</div>
+<div role="article" class="variable" id="percentencodeset.fragment">
+    <h3>
+        <code>fragment</code>
+    </h3>
+    <div class="declaration">
+<pre class="highlight"><code><span class="keyword">public</span> <span class="keyword">var</span> <span class="variable">fragment</span>: <span class="type">Fragment</span>.<span class="type">Type</span> </code></pre>
+</div>
+<div class="summary" role="doc-abstract">
+    <p>The <a href="https://url.spec.whatwg.org/#fragment-percent-encode-set">fragment</a> percent-encode set.</p>
+
+</div>
+</div>
+<div role="article" class="variable" id="percentencodeset.query_notspecial">
+    <h3>
+        <code>query_not​Special</code>
+    </h3>
+    <div class="declaration">
+<pre class="highlight"><code><span class="keyword">public</span> <span class="keyword">var</span> <span class="variable">query_notSpecial</span>: <span class="type">Query_NotSpecial</span>.<span class="type">Type</span> </code></pre>
+</div>
+<div class="summary" role="doc-abstract">
+    <p>The <a href="https://url.spec.whatwg.org/#query-percent-encode-set">query</a> percent-encode set.</p>
+
+</div>
+</div>
+<div role="article" class="variable" id="percentencodeset.query_special">
+    <h3>
+        <code>query_special</code>
+    </h3>
+    <div class="declaration">
+<pre class="highlight"><code><span class="keyword">public</span> <span class="keyword">var</span> <span class="variable">query_special</span>: <span class="type">Query_Special</span>.<span class="type">Type</span> </code></pre>
+</div>
+<div class="summary" role="doc-abstract">
+    <p>The <a href="https://url.spec.whatwg.org/#special-query-percent-encode-set">special query</a> percent-encode set.</p>
+
+</div>
+</div>
+<div role="article" class="variable" id="percentencodeset.path">
+    <h3>
+        <code>path</code>
+    </h3>
+    <div class="declaration">
+<pre class="highlight"><code><span class="keyword">public</span> <span class="keyword">var</span> <span class="variable">path</span>: <span class="type">Path</span>.<span class="type">Type</span> </code></pre>
+</div>
+<div class="summary" role="doc-abstract">
+    <p>The <a href="https://url.spec.whatwg.org/#path-percent-encode-set">path</a> percent-encode set.</p>
+
+</div>
+</div>
+<div role="article" class="variable" id="percentencodeset.userinfo">
+    <h3>
+        <code>user​Info</code>
+    </h3>
+    <div class="declaration">
+<pre class="highlight"><code><span class="keyword">public</span> <span class="keyword">var</span> <span class="variable">userInfo</span>: <span class="type">UserInfo</span>.<span class="type">Type</span> </code></pre>
+</div>
+<div class="summary" role="doc-abstract">
+    <p>The <a href="https://url.spec.whatwg.org/#userinfo-percent-encode-set">userinfo</a> percent-encode set.</p>
+
+</div>
+</div>
+<div role="article" class="variable" id="percentencodeset.component">
+    <h3>
+        <code>component</code>
+    </h3>
+    <div class="declaration">
+<pre class="highlight"><code><span class="keyword">public</span> <span class="keyword">var</span> <span class="variable">component</span>: <span class="type">Component</span>.<span class="type">Type</span> </code></pre>
+</div>
+<div class="summary" role="doc-abstract">
+    <p>The <a href="https://url.spec.whatwg.org/#component-percent-encode-set">component</a> percent-encode set.</p>
+
+</div>
+</div>
+<div role="article" class="variable" id="percentencodeset.form">
+    <h3>
+        <code>form</code>
+    </h3>
+    <div class="declaration">
+<pre class="highlight"><code><span class="keyword">public</span> <span class="keyword">var</span> <span class="variable">form</span>: <span class="type">FormEncoded</span>.<span class="type">Type</span> </code></pre>
+</div>
+<div class="summary" role="doc-abstract">
+    <p>The <a href="https://url.spec.whatwg.org/#application-x-www-form-urlencoded-percent-encode-set">application/x-www-form-urlencoded</a>
+percent-encode set.</p>
+
+</div>
+</div>
+    </section>
+
+
+
+        </article>
+    </main>
+
+    <footer>
+        <p>
+    Generated on <time datetime="2021-05-03T17:07:34+0000">May 3, 2021</time> using a fork of <a href="https://github.com/SwiftDocOrg/swift-doc">swift-doc</a> <span class="version">1.0.0-beta.6</span>.
+</p>
+    </footer>
+</body>
+</html>
